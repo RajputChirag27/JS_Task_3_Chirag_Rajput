@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5% !important;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    font-family: 'Poppins', Courier, monospace, sans-serif;
+}
+
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.modal {
+    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 0.8rem;
+    font-size: 1.5rem !important;
+}
+
+tr{
+    width: 100% !important;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Button styling */
+.btn-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-actions button {
+    margin-right: 0.5rem;
+}
+
+.form-group {
+    font-size: 3rem !important;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="month"],
+#address,
+#dob {
+    font-size: 1.5rem !important;
+}
+
+td {
+    font-size: 1.5rem !important;
+}
+
+button {
+    font-size: 1.5rem !important;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.modal-content {
+    background-image: linear-gradient(to right, #141e30, #243b55);
+}
+
+button.btn-close{
+    filter: invert(1    );
+}
+
+.alert-message {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+}
+
+.error{
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+}
+
+button{
+    color: white !important;
+}
+
+.dt-column-title{
+font-size: 2rem !important;
+}
+
+body > main > h2{
+    font-size: 3rem !important;
+}
+
+#dt-length-0{
+    font-size: 1.5rem !important;
+    background-color: white;
+}
+
+
+#collTable_wrapper > div:nth-child(1) > div.dt-layout-cell.dt-start > div > label{
+    font-size: 1.5rem !important;
+    color: white;
+    margin-left: 1rem;
+}
+
+#collTable_wrapper > div:nth-child(1) > div.dt-layout-cell.dt-end > div > label{
+    font-size: 1.5rem !important;
+    color: white;
+    margin-right: 1rem;
+}
+
+#collTable_info{
+    font-size: 1.5rem !important;
+    color: white;
+}
+
+#collTable_wrapper > div:nth-child(1) > div.dt-layout-cell.dt-end > div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#collTable_wrapper > div.dt-layout-row.dt-layout-table > div{
+    width: 100% !important;
+}
+
+#dt-search-0{
+    background-color: white;
+    border-radius: .5em;
+    font-size: 1.5rem !important
+}
+
+.ui-state-default.ui-state-disabled{
+    background-color: rgb(65,65,65);
+    color: white;
+    transition: all 0.3s ease-in;
+    padding: 1rem 1.2rem !important;
+}
+
+.ui-state-default.ui-state-disabled:hover{
+    background-color: rgba(65,65,65,0.7);
+    color: white;
+    padding: 1.5rem 2rem !important;
+}
+
+.ui-state-default.ui-state-disabled.next,.ui-state-default.next,.ui-state-default.ui-state-disabled.last,.ui-state-default.last,.ui-state-default.previous,.ui-state-default.ui-state-disabled.previous,.ui-state-default.ui-state-disabled.first, .ui-state-default.first{
+    background-color: rgba(123, 124, 123, 0.8);
+    color: white;
+}
+
+.dt-layout-cell{
+    overflow-y: hidden;
+}
+
+@media screen and (max-width: 992px) {
+    *{
+        font-size: 58.5% !important;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    *{
+        font-size: 52.5% !important;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    *{
+        font-size: 48.5% !important;
+    }
+    
+    .dt-search{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    *{
+        font-size: 42.5% !important;
+    }
+    
+}
+
+option{
+    font-size: 1.5rem !important;
+}

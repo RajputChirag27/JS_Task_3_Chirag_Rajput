@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Task 2</title>
+  <!-- Styles  -->
+  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="https://cdn.datatables.net/v/ju/dt-2.0.1/af-2.7.0/b-3.0.0/b-html5-3.0.0/b-print-3.0.0/cr-2.0.0/fh-4.0.0/r-3.0.0/sb-1.7.0/sp-2.3.0/sl-2.0.0/sr-1.4.0/datatables.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <!-- Main Starts Here  -->
+  <main class="d-flex flex-column justify-content-center py-5">
+    <!-- Modal  -->
+    <!-- Button trigger modal -->
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+      <button type="button" class="btn btn-info fs-3 px-5 py-3" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        Add Student
+      </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog ">
+        <div class="modal-content ">
+          <div class="modal-header ">
+            <h1 class="modal-title fs-1 text-white" id="exampleModalLabel">Student Details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="myForm" class="fs-1 text-white" name="registration" >
+              <div class="form-group">
+                <span class="alert-message fs-3" id="formError"></span>
+                <label for="firstName">First Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="firstName" name="firstName" required>
+                <span class="alert-message" id="firstNameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName">
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth (minimum 18) <span class="text-danger">*</span></label>
+                <input type="date" class="form-control text-uppercase" id="dob" name="dob" min="1900-01-01" max="2099-09-13" required>
+                <span class="alert-message" id="dobError"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" name="email">
+                <span class="alert-message" id="emailError"></span>
+              </div>
+              <div class="form-group">
+                <label for="address">Address (multiline)</label>
+                <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="startYear">Start Year <span class="text-danger">*</span></label>
+                <input type="month" class="form-control" id="startYear" name="startYear" value="2024-02" required>
+              </div>
+              <div class="form-group">
+                <label for="graduationYear">Graduation Year <span class="text-danger">*</span></label>
+                <input type="month" class="form-control" id="graduationYear" name="graduationYear" value="2024-02" required
+                  >
+                  <span class="alert-message" id="graduationYearError"></span>
+              </div>
+              <div class="container-fluid d-flex justify-content-between pt-5">
+                <h1 class="text-white fs-1">Education</h1>
+                <button class="btn-info btn mb-3" type="button" onclick="function1()">+</button>
+            </div>  
+              <div class="table-responsive">
+              <table class="table table-responsive table-striped table-hover text-center text-white mb-0"
+                id="table1">
+                <thead>
+                  <tr class="">
+                    <!-- <th scope="col">Team Member</th> -->
+                    <th scope="col">Degree/Board</th>
+                    <th scope="col">School/College</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Passout Year</th>
+                    <th scope="col">Percentage</th>
+                    <th scope="col">Backlog</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr>
+                    <td>
+                      <input type="text" name="Degree" class="form-control" placeholder="Degree" aria-label="Degree">
+                    </td>
+                    <td>
+                      <input type="text" name="School" class="form-control" aria-label="School">
+                    </td>
+
+                    <td>
+                      <input type="month" class="form-control" name="Start" aria-label="Start" id="Start"
+                        value="2024-02">
+                    </td>
+
+                    <td>
+                      <input type="month" class="form-control" name="Passout" aria-label="Passout" id="Passout"
+                        value="2024-02">
+                    </td>
+
+
+                    <td>
+                      <input type="number" name="Percentage" class="form-control" placeholder="Dont use % sign"
+                        aria-label="Percentage" min="0" max="100">
+                    </td>
+                    <td>
+                      <input type="number" name="Backlog" class="form-control" placeholder="If Any" min="0" max="10"
+                        aria-label="Backlog">
+                    </td>
+                    <td> <button class="btn-danger btn" disabled>-</button></td>
+
+
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" name="Degree" class="form-control" placeholder="Degree" aria-label="Degree">
+                    </td>
+                    <td>
+                      <input type="text" name="Degree" class="form-control" aria-label="Degree">
+                    </td>
+
+                    <td>
+                      <input type="month" class="form-control" name="Start" aria-label="Start" id="Start"
+                        value="2024-02">
+                    </td>
+
+                    <td>
+                      <input type="month" class="form-control" name="Passout" aria-label="Passout" id="Passout"
+                        value="2024-02">
+                    </td>
+
+
+                    <td>
+                      <input type="number" name="Percentage" class="form-control" placeholder="Dont use % sign"
+                        aria-label="Percentage" min="0" max="100">
+                    </td>
+                    <td>
+                      <input type="number" name="Backlog" class="form-control" placeholder="If Any" min="0" max="10"
+                        aria-label="Backlog">
+                    </td>
+                    <td> <button class="btn-danger btn" disabled>-</button></td>
+                  </tr>
+
+                </tbody>
+
+
+
+              </table>
+            </div>
+              <button type="submit" class="btn btn-info my-5 px-5 py-3 fs-3">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Ends  -->
+
+
+    <!-- Output Table  -->
+    <h2 class="text-center text-white py-5">Collected Data will shown below</h2>
+
+    <div class="row justify-content-center container-fluid hidden" id="collTableDiv">
+      <div class="col-auto " id="myTab">
+        <div class=" container-fluid mt-5">
+          <table class="table text-center table-dark table-hover fs-1" id="collTable" style="width: 100%;">
+            <thead>
+              <tr class="fs-1 w-100">
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Start Year</th>
+                <th>Graduation Year</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="data-table-body" class="fs-1 w-100">
+              <!-- Data rows will be dynamically added here -->
+              <!-- <td>Hello</td>
+              <td>Hello</td>
+              <td>Hello</td>
+              <td>Hello</td>
+              <td>Hello</td>
+              <td>Hello</td>
+              <td>Hello</td> 
+               <td><button type="button" class="btn btn-success btn-sm mb-3" onclick="editEntry(this)">Edit</button>
+                <button type="button" class="btn btn-danger btn-sm mb-3" onclick="deleteEntry(this)">Delete</button></td> -->
+            </tbody>
+            <tfoot>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="alertMessageTable"></div>
+  </main>
+
+  <!--  Scripts  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+  <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+<script src="https://cdn.datatables.net/v/ju/dt-2.0.1/af-2.7.0/b-3.0.0/b-html5-3.0.0/b-print-3.0.0/cr-2.0.0/fh-4.0.0/r-3.0.0/sb-1.7.0/sp-2.3.0/sl-2.0.0/sr-1.4.0/datatables.min.js"></script>
+
+
+</body>
+
+</html>
