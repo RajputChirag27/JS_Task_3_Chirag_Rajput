@@ -209,7 +209,7 @@ option{
 }
 
 /* Loader Styling  */
-
+/* 
 .svg-frame {
     position: relative;
     width: 300px;
@@ -298,7 +298,7 @@ option{
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 0.2em solid rgb(13,202,240); /* Cursor */
+    border-right: 0.2em solid rgb(13,202,240); 
     animation: typeAndDelete 4s steps(11) infinite,
       blinkCursor 0.5s step-end infinite alternate;
     margin-top: 1.5em;
@@ -307,6 +307,199 @@ option{
   @keyframes blinkCursor {
     50% {
       border-right-color: transparent;
+    }
+  }
+  
+  @keyframes typeAndDelete {
+    0%,
+    10% {
+      width: 0;
+    }
+    45%,
+    55% {
+      width: 6.2em;
+    } 
+    90%,
+    100% {
+      width: 0;
+    }
+  } */
+
+  /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
+.svg-frame {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .svg-frame svg {
+    position: absolute;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    z-index: calc(1 - (0.2 * var(--j)));
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    width: 344px;
+    height: 344px;
+    fill: none;
+  }
+  
+  .svg-frame:hover svg {
+    -webkit-transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+        -ms-transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+            transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+  }
+  
+  .svg-frame svg #center {
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+  }
+  
+  .svg-frame:hover svg #center {
+    -webkit-transform: rotate(-30deg) translateX(45px) translateY(-3px);
+        -ms-transform: rotate(-30deg) translateX(45px) translateY(-3px);
+            transform: rotate(-30deg) translateX(45px) translateY(-3px);
+  }
+  
+  #out2 {
+    -webkit-animation: rotate16 7s ease-in-out infinite alternate;
+            animation: rotate16 7s ease-in-out infinite alternate;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+  }
+  
+  #out3 {
+    -webkit-animation: rotate16 3s ease-in-out infinite alternate;
+            animation: rotate16 3s ease-in-out infinite alternate;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    stroke: #ff0;
+  }
+  
+  #inner3,
+  #inner1 {
+    -webkit-animation: rotate16 4s ease-in-out infinite alternate;
+            animation: rotate16 4s ease-in-out infinite alternate;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+  }
+  
+  #center1 {
+    fill: #ff0;
+    -webkit-animation: rotate16 2s ease-in-out infinite alternate;
+            animation: rotate16 2s ease-in-out infinite alternate;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+  }
+  
+  @-webkit-keyframes rotate16 {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotate16 {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+  #loading {
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-image: -webkit-gradient(linear, left top, right top, from(#434343), to(black));
+    background-image: -o-linear-gradient(left, #434343 0%, black 100%);
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    z-index: 99;
+  }
+  
+  #loader {
+    z-index: 100;
+  }
+
+  .loader-text{
+    margin-top: 30em !important;
+  }
+
+  .text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.2em solid rgb(13,202,240); /* Cursor */
+    -webkit-animation: typeAndDelete 4s steps(11) infinite,
+      blinkCursor 0.5s step-end infinite alternate;
+            animation: typeAndDelete 4s steps(11) infinite,
+      blinkCursor 0.5s step-end infinite alternate;
+    margin-top: 1.5em;
+  }
+
+  @-webkit-keyframes blinkCursor {
+    50% {
+      border-right-color: transparent;
+    }
+  }
+
+  @keyframes blinkCursor {
+    50% {
+      border-right-color: transparent;
+    }
+  }
+  
+  @-webkit-keyframes typeAndDelete {
+    0%,
+    10% {
+      width: 0;
+    }
+    45%,
+    55% {
+      width: 6.2em;
+    } /* adjust width based on content */
+    90%,
+    100% {
+      width: 0;
     }
   }
   
